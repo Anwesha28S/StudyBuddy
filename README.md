@@ -4,9 +4,9 @@ An advanced, full-stack AI-driven educational platform that transforms static le
 
 ---
 
-## 🚀 Key Features
+## Key Features
 
-*   **Premium Dark UI Dashboard:** Features a clean, accessible layout (`bg-[#07070b]`) featuring high-fidelity styling built with Tailwind CSS.
+*   **Premium Dark UI Dashboard:** Features a clean, accessible layout featuring high-fidelity styling built with Tailwind CSS.
 *   **Lecture Synthesis & Roadmap:** Replaces arbitrary timeline segments with an AI-generated academic overview, review time allocation budget, and a curated key takeaways panel.
 *   **Dynamic Knowledge Assessment:** Generates customized multiple-choice questions with real-time semantic feedback loops (correct options highlight in emerald; incorrect choices flash in rose).
 *   **Interactive AI Assistance:** A vector-indexed contextual assistant sitting side-by-side with an embedded YouTube stream player, allowing students to query specifics across long-form lectures.
@@ -14,7 +14,7 @@ An advanced, full-stack AI-driven educational platform that transforms static le
 
 ---
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 ### Frontend Canvas
 *   **React.js (Vite)** — Single Page Application structural foundation.
@@ -29,7 +29,7 @@ An advanced, full-stack AI-driven educational platform that transforms static le
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```text
 ai-studybuddy/
