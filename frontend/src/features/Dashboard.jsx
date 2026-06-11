@@ -39,9 +39,14 @@ export default function Dashboard() {
     <h1 className="text-4xl font-bold tracking-tight bg-linear-to-r from-purple-400 via-fuchsia-400 to-indigo-400 bg-clip-text text-transparent">
       AI StudyBuddy Workspace
     </h1>
-    <p className="text-lg text-zinc-400 mt-2">
-      Convert any static lecture video link into an active workspace environment.
+    <p className="text-xl text-indigo-400 mt-2">
+      Bored from long static Youtube Tutorials?
+      
     </p>
+    <p className="text-lg text-zinc-400 mt-2">
+      Convert any lecture video link into an active workspace environment.
+    </p>
+    
   </div>
 
   {/* Input Link Form Controller */}
