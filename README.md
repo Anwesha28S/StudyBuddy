@@ -14,7 +14,7 @@ An advanced, full-stack AI-driven educational platform that transforms static le
 
 ---
 
-## Technology Stack
+## 🛠️ Technology Stack
 
 ### Frontend Canvas
 *   **React.js (Vite)** — Single Page Application structural foundation.
@@ -29,7 +29,7 @@ An advanced, full-stack AI-driven educational platform that transforms static le
 
 ---
 
-## Project Structure
+## 📁 Project Structure
 
 ```text
 ai-studybuddy/
@@ -54,3 +54,9 @@ ai-studybuddy/
     │   └── index.css           # Global Tailwind compiler directive configurations
     ├── tailwind.config.js      # Workspace utility routing scanner
     └── package.json            # Node package configurations
+
+## Model in Action 
+![alt text](image.png)
+![alt text](image-1.png)
+![alt text](image-2.png)
+![alt text](image-3.png)
