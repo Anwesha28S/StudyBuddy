@@ -11,7 +11,7 @@ export default function VideoChat({ videoId }) {
   const [isTyping, setIsTyping] = useState(false);
   const chatEndRef = useRef(null);
 
-  // Auto-scrolls the chat window to the newest message tokens as they stream in
+  
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages, isTyping]);
@@ -21,7 +21,7 @@ export default function VideoChat({ videoId }) {
 
     const userMsg = { text: query, sender: 'user' };
     
-    // Optimistically add user query, clear input layout, and append an empty bot bubble for streaming
+    
     setMessages((prev) => [...prev, userMsg, { text: '', sender: 'bot' }]);
     setQuery('');
     setIsTyping(true);
@@ -47,7 +47,7 @@ export default function VideoChat({ videoId }) {
         const textChunk = decoder.decode(value, { stream: true });
         accruedBotReply += textChunk;
 
-        // Target and modify the absolute last element in state (our active bot stream bubble)
+        
         setMessages((prev) => {
           const updated = [...prev];
           updated[updated.length - 1] = { text: accruedBotReply, sender: 'bot' };
@@ -86,7 +86,7 @@ export default function VideoChat({ videoId }) {
     </div>
   </div>
 
-  {/* RIGHT PANE: Contextual Vector Q&A Panel */}
+  
   <div className="lg:col-span-5 flex flex-col bg-[#0f0f17] border border-slate-800 rounded-xl shadow-xl overflow-hidden h-full">
     
     {/* Chat Workspace Header */}
@@ -100,7 +100,7 @@ export default function VideoChat({ videoId }) {
       </div>
     </div>
 
-    {/* Messaging Logs Screen */}
+    
     <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-[#09090d]">
       {messages.map((msg, i) => (
         <div key={i} className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
@@ -111,7 +111,7 @@ export default function VideoChat({ videoId }) {
                 : 'bg-[#23232c] text-zinc-200 border border-slate-800 rounded-bl-md'
             }`}
           >
-            {/* Fallback to typing placeholder if message block is strictly rendering first chunk */}
+            
             {msg.text === '' && isTyping && i === messages.length - 1 ? (
               <div className="flex space-x-1.5 py-1 px-2 items-center justify-center">
                 <div className="h-1.5 w-1.5 bg-slate-500 rounded-full animate-bounce [animation-delay:-0.3s]"></div>
@@ -127,7 +127,6 @@ export default function VideoChat({ videoId }) {
       <div ref={chatEndRef} />
     </div>
 
-    {/* Input Text Form Submissions Container */}
     <div className="p-3 border-t border-slate-800/80 bg-[#14141f]">
       <div className="flex gap-2">
         <input
