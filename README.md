@@ -54,7 +54,7 @@ ai-studybuddy/
     │   └── index.css           # Global Tailwind compiler directive configurations
     ├── tailwind.config.js      # Workspace utility routing scanner
     └── package.json            # Node package configurations
-    
+```
 ---
 ## 📸 Model in Action
 
@@ -63,11 +63,11 @@ Below are the interface states of the AI StudyBuddy Workspace processing an acti
 ### 1. Active Dashboard Entry
 ![Dashboard Workspace Entry](frontend/src/assets/image.png)
 
-### 2. AI Synthesis & Curriculum Planner View
+### 2. Synthesis & Curriculum Planner View
 ![Study Planner View](frontend/src/assets/image-1.png)
 
 ### 3. Dynamic Knowledge Assessment (Quiz)
 ![Quiz Feedback State](frontend/src/assets/image-2.png)
 
-### 4. Vector Contextual AI Copilot Chat
+### 4. Vector Contextual AI Assistance Chat
 ![Interactive Video Chat](frontend/src/assets/image-3.png)
