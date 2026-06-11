@@ -16,7 +16,7 @@ class Quiz(BaseModel):
     quiz: List[QuizItem]
 
 def generate_quiz(transcript: str):
-    llm = ChatGroq(model="llama-3.3-70b-versatile", temperature=0)
+    llm = ChatGroq(model="llama-3.3-70b-versatile", temperature=0.7)
 
     parser = JsonOutputParser(pydantic_object=Quiz)
 
@@ -24,7 +24,7 @@ def generate_quiz(transcript: str):
         (
             "system",
             """You are an educator.
-Generate exactly 5 multiple-choice questions based strictly on the transcript.
+Generate exactly 10 multiple-choice questions based strictly on the transcript.
 
 Each question must have exactly 4 options.
 The correct_answer must exactly match one option.

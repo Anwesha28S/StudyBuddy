@@ -70,86 +70,86 @@ export default function VideoChat({ videoId }) {
   };
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 h-[calc(100vh-220px)] min-h-[500px]">
+    <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 h-[calc(100vh-220px)] min-h-[550px]">
       
-      {/* LEFT PANE: Embedded YouTube Lecture Video Player */}
-      <div className="lg:col-span-7 bg-slate-900 rounded-xl overflow-hidden shadow-md flex items-center justify-center border border-slate-800">
-        <div className="w-full aspect-video">
-          <iframe
-            className="w-full h-full"
-            src={`https://www.youtube.com/embed/${videoId}`}
-            title="StudyBuddy Lecture Viewer"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-          ></iframe>
-        </div>
-      </div>
+  {/* LEFT PANE: Embedded YouTube Lecture Video Player */}
+  <div className="lg:col-span-7 bg-[#0f0f17] rounded-xl overflow-hidden shadow-xl flex items-center justify-center border border-slate-800/80">
+    <div className="w-full aspect-video">
+      <iframe
+        className="w-full h-full"
+        src={`https://www.youtube.com/embed/${videoId}`}
+        title="StudyBuddy Lecture Viewer"
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowFullScreen
+      ></iframe>
+    </div>
+  </div>
 
-      {/* RIGHT PANE: Contextual Vector Q&A Panel */}
-      <div className="lg:col-span-5 flex flex-col bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden">
-        
-        {/* Chat Workspace Header */}
-        <div className="bg-slate-50 border-b border-slate-200 px-4 py-3 flex items-center justify-between">
-          <div>
-            <h3 className="font-semibold text-slate-800 text-sm">Active Video AI Copilot</h3>
-            <p className="text-xs text-emerald-600 flex items-center gap-1 mt-0.5">
-              <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
-              Connected to ChromaDB Context Index
-            </p>
-          </div>
-        </div>
-
-        {/* Messaging Logs Screen */}
-        <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-slate-50/30">
-          {messages.map((msg, i) => (
-            <div key={i} className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
-              <div
-                className={`p-3 rounded-xl max-w-[85%] text-sm shadow-sm leading-relaxed ${
-                  msg.sender === 'user'
-                    ? 'bg-indigo-600 text-white rounded-tr-none'
-                    : 'bg-white text-slate-700 border border-slate-200/60 rounded-tl-none'
-                }`}
-              >
-                {/* Fallback to typing placeholder if message block is strictly rendering first chunk */}
-                {msg.text === '' && isTyping && i === messages.length - 1 ? (
-                  <div className="flex space-x-1 py-1 px-2 items-center justify-center">
-                    <div className="h-1.5 w-1.5 bg-slate-400 rounded-full animate-bounce [animation-delay:-0.3s]"></div>
-                    <div className="h-1.5 w-1.5 bg-slate-400 rounded-full animate-bounce [animation-delay:-0.15s]"></div>
-                    <div className="h-1.5 w-1.5 bg-slate-400 rounded-full animate-bounce"></div>
-                  </div>
-                ) : (
-                  <p className="whitespace-pre-wrap">{msg.text}</p>
-                )}
-              </div>
-            </div>
-          ))}
-          <div ref={chatEndRef} />
-        </div>
-
-        {/* Input Text Form Submissions Container */}
-        <div className="p-3 border-t border-slate-200 bg-white">
-          <div className="flex gap-2">
-            <input
-              type="text"
-              className="flex-1 border border-slate-300 px-4 py-2.5 rounded-lg text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500"
-              placeholder="Ask a question about this segment..."
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              onKeyDown={(e) => e.key === 'Enter' && handleSendChat()}
-              disabled={isTyping}
-            />
-            <button
-              onClick={handleSendChat}
-              disabled={isTyping || !query.trim()}
-              className="bg-indigo-600 hover:bg-indigo-700 disabled:bg-slate-300 disabled:cursor-not-allowed text-white px-4 py-2.5 rounded-lg text-sm font-medium transition duration-150 shadow-sm flex items-center justify-center"
-            >
-              Send
-            </button>
-          </div>
-        </div>
-
+  {/* RIGHT PANE: Contextual Vector Q&A Panel */}
+  <div className="lg:col-span-5 flex flex-col bg-[#0f0f17] border border-slate-800 rounded-xl shadow-xl overflow-hidden h-full">
+    
+    {/* Chat Workspace Header */}
+    <div className="border-b border-slate-800/60 px-4 py-3.5 flex items-center justify-between bg-[#14141f]">
+      <div>
+        <h3 className="font-semibold text-zinc-100 text-sm tracking-wide">Active Video AI Assistant</h3>
+        <p className="text-xs text-emerald-400 flex items-center gap-1.5 mt-1">
+          <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
+          Connected to ChromaDB Context Index
+        </p>
       </div>
     </div>
+
+    {/* Messaging Logs Screen */}
+    <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-[#09090d]">
+      {messages.map((msg, i) => (
+        <div key={i} className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
+          <div
+            className={`p-3.5 rounded-2xl max-w-[85%] text-sm leading-relaxed shadow-md ${
+              msg.sender === 'user'
+                ? 'bg-linear-to-r from-violet-600 via-purple-600 to-indigo-600 text-white rounded-br-md shadow-purple-900/20'
+                : 'bg-[#23232c] text-zinc-200 border border-slate-800 rounded-bl-md'
+            }`}
+          >
+            {/* Fallback to typing placeholder if message block is strictly rendering first chunk */}
+            {msg.text === '' && isTyping && i === messages.length - 1 ? (
+              <div className="flex space-x-1.5 py-1 px-2 items-center justify-center">
+                <div className="h-1.5 w-1.5 bg-slate-500 rounded-full animate-bounce [animation-delay:-0.3s]"></div>
+                <div className="h-1.5 w-1.5 bg-slate-500 rounded-full animate-bounce [animation-delay:-0.15s]"></div>
+                <div className="h-1.5 w-1.5 bg-slate-500 rounded-full animate-bounce"></div>
+              </div>
+            ) : (
+              <p className="whitespace-pre-wrap">{msg.text}</p>
+            )}
+          </div>
+        </div>
+      ))}
+      <div ref={chatEndRef} />
+    </div>
+
+    {/* Input Text Form Submissions Container */}
+    <div className="p-3 border-t border-slate-800/80 bg-[#14141f]">
+      <div className="flex gap-2">
+        <input
+          type="text"
+          className="flex-1 bg-[#09090d] border border-slate-800 px-4 py-2.5 rounded-lg text-sm text-zinc-200 placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-purple-500/40 focus:border-purple-500 transition duration-150"
+          placeholder="Ask a question about this segment..."
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          onKeyDown={(e) => e.key === 'Enter' && handleSendChat()}
+          disabled={isTyping}
+        />
+        <button
+          onClick={handleSendChat}
+          disabled={isTyping || !query.trim()}
+          className="bg-purple-600 hover:bg-purple-700 disabled:bg-slate-800 disabled:text-zinc-600 disabled:cursor-not-allowed text-white px-5 py-2.5 rounded-lg text-sm font-medium transition duration-150 shadow-sm flex items-center justify-center"
+        >
+          Send
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
   );
 }

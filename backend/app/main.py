@@ -3,6 +3,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from app.services.videoprocessor import extract_transcript
+from app.services.planner import generate_study_plan
 from app.services.quizgen import generate_quiz
 import os
 from dotenv import load_dotenv
@@ -46,14 +47,15 @@ async def generate_workspace(request: ProcessRequest):
         
         # Build the study materials
         quiz = generate_quiz(transcript)
-        
+        study_plan = generate_study_plan(transcript)
         if isinstance(quiz, dict) and "quiz" in quiz:
             quiz = quiz["quiz"]
         vector_service.index_youtube_video(video_id, transcript)
 
         return {
             "video_id": video_id,
-            "quiz": quiz
+            "quiz": quiz,
+            "planner": study_plan
         }
     except Exception as e:
         print(f"❌ ERROR in generate_workspace: {str(e)}")
