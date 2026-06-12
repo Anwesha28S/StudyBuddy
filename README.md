@@ -92,7 +92,7 @@ Make sure the following are installed:
 ## 📥 Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/ai-studybuddy.git
+git clone https://github.com/Anwesha28S/StudyBuddy.git
 cd ai-studybuddy
 ```
 
