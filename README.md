@@ -93,7 +93,7 @@ Make sure the following are installed:
 
 ```bash
 git clone https://github.com/Anwesha28S/StudyBuddy.git
-cd ai-studybuddy
+cd StudyBuddy
 ```
 
 ---
