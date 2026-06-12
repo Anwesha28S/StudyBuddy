@@ -36,7 +36,7 @@ export default function Dashboard() {
 
   {/* Title Header */}
   <div className="mb-10 text-center">
-    <h1 className="text-4xl font-bold tracking-tight bg-linear-to-r from-purple-400 via-fuchsia-400 to-indigo-400 bg-clip-text text-transparent">
+    <h1 className="text-4xl font-bold tracking-tight bg-linear-to-r text-purple-400 bg-clip-text">
       AI StudyBuddy Workspace
     </h1>
     <p className="text-xl text-indigo-400 mt-2">
@@ -63,7 +63,7 @@ export default function Dashboard() {
     <button
       onClick={handleBuildWorkspace}
       disabled={loading || !videoUrl.trim()}
-      className="bg-linear-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 disabled:from-zinc-800 disabled:to-zinc-900 disabled:text-zinc-200  focus:border-purple-500 text-white font-semibold text-sm px-6 py-3 rounded-xl transition duration-150 shadow-lg shadow-purple-900/30"
+      className="bg-purple-500 hover:bg-purple-700 disabled:bg-zinc-800 disabled:text-zinc-200 focus:border-purple-500 text-white font-semibold text-sm px-6 py-3 rounded-xl transition duration-150 shadow-lg shadow-purple-900/30"
     >
       {loading ? "Analyzing Video..." : "Generate Workspace"}
     </button>

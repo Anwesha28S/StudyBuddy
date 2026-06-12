@@ -107,7 +107,7 @@ export default function VideoChat({ videoId }) {
           <div
             className={`p-3.5 rounded-2xl max-w-[85%] text-sm leading-relaxed shadow-md ${
               msg.sender === 'user'
-                ? 'bg-linear-to-r from-violet-600 via-purple-600 to-indigo-600 text-white rounded-br-md shadow-purple-900/20'
+                ? 'bg-violet-600 text-white rounded-br-md shadow-purple-900/20'
                 : 'bg-[#23232c] text-zinc-200 border border-slate-800 rounded-bl-md'
             }`}
           >
