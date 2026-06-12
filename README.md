@@ -73,7 +73,7 @@ Below are the interface states of the AI StudyBuddy Workspace processing an acti
 ![Interactive Video Chat](frontend/src/assets/image-3.png)
 
 
-# ⚙️ Local Setup Instructions
+## ⚙️ Local Setup Instructions
 
 Follow these steps to get the project running smoothly on your local machine.
 
@@ -98,7 +98,7 @@ cd ai-studybuddy
 
 ---
 
-# 🖥️ Backend Setup (FastAPI)
+## 🖥️ Backend Setup (FastAPI)
 
 Navigate to the backend directory:
 
@@ -161,7 +161,7 @@ http://localhost:8000
 
 ---
 
-# 🎨 Frontend Setup (React + Vite)
+## 🎨 Frontend Setup (React + Vite)
 
 Open a new terminal and navigate to the frontend directory:
 
@@ -197,7 +197,7 @@ http://localhost:5173
 
 ---
 
-# 🚀 Running the Application
+## 🚀 Running the Application
 
 1. Start the FastAPI backend server.
 2. Start the Vite frontend server.
